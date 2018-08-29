@@ -42,3 +42,7 @@ variable "alb_backend_port" {
   description = "Backend port for ALB to send data"
   default     = 8000
 }
+
+variable "vpc_id" {
+  description = "VPC ID for ALB"
+}

@@ -32,3 +32,13 @@ variable "ecs_role_arn" {
   description = "Override default ecs role"
   default     = ""
 }
+
+variable "alb_listen_port" {
+  description = "Port for ALB to listen on"
+  default     = 8000
+}
+
+variable "alb_backend_port" {
+  description = "Backend port for ALB to send data"
+  default     = 8000
+}

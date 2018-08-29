@@ -13,9 +13,13 @@ locals {
   ecr_repo      = "${var.ecr_repo != "" ? var.ecr_repo : local.project_name}"
   ecr_repo_full = "${local.account_id}.dkr.ecr.${local.region}.amazonaws.com/${local.ecr_repo}"
 
-  ecs_name_cluster         = "${local.project_name}-cluster"
-  ecs_name_task_definition = "${local.project_name}-task-definition"
-  ecs_name_service         = "${local.project_name}-service"
+  // ecs_name_cluster         = "${local.project_name}-cluster"
+  // ecs_name_task_definition = "${local.project_name}-task-definition"
+  // ecs_name_service         = "${local.project_name}-service"
+
+  ecs_name_cluster         = "${local.project_name}"
+  ecs_name_task_definition = "${local.project_name}"
+  ecs_name_service         = "${local.project_name}"
   ecs_iam_role_name        = "${local.project_name}-ecs"
   ecs_role_arn             = "${var.ecs_role_arn != "" ? var.ecs_role_arn : "arn:aws:iam::${local.account_id}:role/${local.ecs_iam_role_name}"}" //"
 }

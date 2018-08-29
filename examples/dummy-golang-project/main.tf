@@ -7,6 +7,9 @@ module "ecs_fargate" {
 
   security_groups = ["${module.sg.id}"]
   subnets         = ["${module.vpc.public_subnets}"]
+  vpc_id          = "${module.vpc.vpc_id}"
+  container_port  = "9999"
+  host_port       = "9999"
 }
 
 module "vpc" {

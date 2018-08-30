@@ -65,3 +65,13 @@ variable "deployment_minimum_healthy_percent" {
   description = "Minimum healthy percent for ECS"
   default     = 0
 }
+
+variable "env_keys" {
+  description = "Keys for env vars"
+  default     = [""]
+}
+
+variable "env_vals" {
+  description = "Vals for env vars"
+  default     = [""]
+}

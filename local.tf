@@ -22,5 +22,5 @@ locals {
   log_group_count = "${var.create_log_group}"
 
   env_length = "${length(var.env_keys) == length(var.env_vals) ? length(var.env_keys) : 0}"
-  env_vars   = "${join(",", formatlist("\"%s\":\"%s\"", var.env_keys, var.env_vals))}"
+  env_vars   = "${local.env_length > 0 ? join(",", formatlist("\"%s\":\"%s\"", var.env_keys, var.env_vals)) : "{\"TF_AUTHOR\":\"rms1000watt\"}" }" //"
 }

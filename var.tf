@@ -68,10 +68,10 @@ variable "deployment_minimum_healthy_percent" {
 
 variable "env_keys" {
   description = "Keys for env vars"
-  default     = [""]
+  default     = []
 }
 
 variable "env_vals" {
   description = "Vals for env vars"
-  default     = [""]
+  default     = []
 }

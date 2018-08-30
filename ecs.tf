@@ -20,8 +20,8 @@ resource "aws_ecs_service" "0" {
   task_definition = "${aws_ecs_task_definition.0.arn}"
   launch_type     = "FARGATE"
 
-  desired_count                      = 0
-  deployment_minimum_healthy_percent = 0
+  desired_count                      = "${var.desired_count}"
+  deployment_minimum_healthy_percent = "${var.deployment_minimum_healthy_percent}"
 
   network_configuration {
     security_groups  = ["${aws_security_group.alb_ecs.id}"]

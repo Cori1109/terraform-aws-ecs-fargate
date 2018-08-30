@@ -55,3 +55,13 @@ variable "create_log_group" {
   description = "Create /aws/ecs log group"
   default     = true
 }
+
+variable "desired_count" {
+  description = "Desired running containers count"
+  default     = 1
+}
+
+variable "deployment_minimum_healthy_percent" {
+  description = "Minimum healthy percent for ECS"
+  default     = 0
+}

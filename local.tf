@@ -23,5 +23,5 @@ locals {
 
   env_length    = "${length(var.env_keys) == length(var.env_vals) ? length(var.env_keys) : 0}"
   env_vars_list = "${formatlist("{\"name\":\"%s\",\"value\":\"%s\"}", var.env_keys, var.env_vals)}"
-  env_vars      = "${local.env_length > 0 ? join(",", local.env_vars_list) : "{\"TF_AUTHOR\":\"rms1000watt\"}" }" //"
+  env_vars      = "${local.env_length > 0 ? join(",", local.env_vars_list) : "{\"name\":\"TF_AUTHOR\",\"value\":\"rms1000watt\"}" }" //"
 }

@@ -24,8 +24,9 @@ resource "aws_ecs_service" "0" {
   deployment_minimum_healthy_percent = 0
 
   network_configuration {
-    security_groups = ["${var.security_groups}"]
-    subnets         = ["${var.subnets}"]
+    security_groups  = ["${var.security_groups}"]
+    subnets          = ["${var.subnets}"]
+    assign_public_ip = true
   }
 
   load_balancer {

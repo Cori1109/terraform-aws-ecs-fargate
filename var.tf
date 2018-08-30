@@ -42,10 +42,6 @@ variable "vpc_id" {
   description = "VPC ID for ALB"
 }
 
-variable "host_port" {
-  description = "ECS port for the host"
-}
-
 variable "container_port" {
   description = "ECS port on the container"
 }

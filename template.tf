@@ -8,7 +8,6 @@ data "template_file" "task_definition" {
     region        = "${local.region}"
     stream_prefix = "${local.project_name}"
 
-    host_port      = "${var.host_port}"
     container_port = "${var.container_port}"
   }
 }

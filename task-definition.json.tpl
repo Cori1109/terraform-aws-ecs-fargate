@@ -5,8 +5,7 @@
     "essential": true,
     "portMappings": [
       {
-        "containerPort": ${container_port},
-        "hostPort": ${host_port}
+        "containerPort": ${container_port}
       }
     ],
     "logConfiguration": {

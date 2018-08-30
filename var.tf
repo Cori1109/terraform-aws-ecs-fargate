@@ -4,8 +4,13 @@ variable "project_name" {
 }
 
 variable "ecr_repo" {
-  description = "TODO"
+  description = "Only the docker (ECR) repo name in your region/account"
   default     = ""
+}
+
+variable "ecr_repo_tag" {
+  description = "Docker image tag in ECR"
+  default     = "latest"
 }
 
 variable "security_groups" {

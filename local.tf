@@ -11,7 +11,7 @@ locals {
   project_name = "${var.project_name != "" ? var.project_name : local.parent_dir}"
 
   ecr_repo      = "${var.ecr_repo != "" ? var.ecr_repo : local.project_name}"
-  ecr_repo_full = "${local.account_id}.dkr.ecr.${local.region}.amazonaws.com/${local.ecr_repo}"
+  ecr_repo_full = "${local.account_id}.dkr.ecr.${local.region}.amazonaws.com/${local.ecr_repo}:${var.ecr_repo_tag}"
 
   ecs_name_cluster         = "${local.project_name}"
   ecs_name_service         = "${local.project_name}"

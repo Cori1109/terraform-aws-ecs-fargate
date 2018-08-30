@@ -8,7 +8,7 @@ resource "aws_alb" "0" {
 resource "aws_alb_target_group" "0" {
   name = "${local.project_name}"
 
-  port     = "${var.alb_backend_port}"
+  port     = "${var.host_port}"
   protocol = "HTTP"
   vpc_id   = "${var.vpc_id}"
 }

@@ -31,6 +31,6 @@ resource "aws_ecs_service" "0" {
   load_balancer {
     target_group_arn = "${aws_alb_target_group.0.arn}"
     container_name   = "${local.ecs_name_task_definition}"
-    container_port   = "${var.alb_backend_port}"
+    container_port   = "${var.container_port}"
   }
 }

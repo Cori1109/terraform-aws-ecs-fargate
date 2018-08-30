@@ -33,4 +33,8 @@ resource "aws_ecs_service" "0" {
     container_name   = "${local.ecs_name_task_definition}"
     container_port   = "${var.container_port}"
   }
+
+  depends_on = [
+    "aws_alb_listener.0",
+  ]
 }

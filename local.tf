@@ -18,4 +18,6 @@ locals {
   ecs_name_task_definition = "${local.project_name}"
   ecs_iam_role_name        = "${local.project_name}-ecs"
   ecs_role_arn             = "${var.ecs_role_arn != "" ? var.ecs_role_arn : "arn:aws:iam::${local.account_id}:role/${local.ecs_iam_role_name}"}" //"
+
+  log_group_count = "${var.create_log_group}"
 }

@@ -50,3 +50,8 @@ variable "vpc_id" {
 variable "container_port" {
   description = "ECS port on the container"
 }
+
+variable "create_log_group" {
+  description = "Create /aws/ecs log group"
+  default     = true
+}

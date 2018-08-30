@@ -2,8 +2,8 @@
   {
     "name": "${name}",
     "image": "${image}",
-    "cpu": "${ecs_cpu}",
-    "memory": "${ecs_memory}",
+    "cpu": ${ecs_cpu},
+    "memory": ${ecs_memory},
     "essential": true,
     "portMappings": [
       {

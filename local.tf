@@ -20,4 +20,7 @@ locals {
   ecs_role_arn             = "${var.ecs_role_arn != "" ? var.ecs_role_arn : "arn:aws:iam::${local.account_id}:role/${local.ecs_iam_role_name}"}" //"
 
   log_group_count = "${var.create_log_group}"
+
+  env_length = "${length(var.env_keys) == length(var.env_vals) ? length(var.env_keys) : 0}"
+  env_vars   = "${join(",", formatlist("\"%s\":\"%s\"", var.env_keys, var.env_vals))}"
 }

@@ -11,6 +11,7 @@
         "containerPort": ${container_port}
       }
     ],
+    "environment": [${env_vars}],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {

@@ -80,3 +80,8 @@ variable "health_check_path" {
   description = ""
   default     = "/"
 }
+
+variable "include_alb" {
+  description = ""
+  default     = true
+}

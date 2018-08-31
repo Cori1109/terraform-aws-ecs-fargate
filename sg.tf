@@ -16,4 +16,6 @@ resource "aws_security_group" "alb_ecs" {
     to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+
+  count = "${local.alb_count}"
 }

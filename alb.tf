@@ -3,6 +3,8 @@ resource "aws_alb" "0" {
 
   security_groups = ["${var.security_groups}"]
   subnets         = ["${var.subnets}"]
+
+  count = "${local.alb_count}"
 }
 
 resource "aws_alb_target_group" "0" {
@@ -16,6 +18,8 @@ resource "aws_alb_target_group" "0" {
   health_check {
     path = "${var.health_check_path}"
   }
+
+  count = "${local.alb_count}"
 }
 
 resource "aws_alb_listener" "0" {
@@ -27,4 +31,6 @@ resource "aws_alb_listener" "0" {
     target_group_arn = "${aws_alb_target_group.0.id}"
     type             = "forward"
   }
+
+  count = "${local.alb_count}"
 }

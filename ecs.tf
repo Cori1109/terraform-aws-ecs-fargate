@@ -38,4 +38,24 @@ resource "aws_ecs_service" "0" {
   depends_on = [
     "aws_alb_listener.0",
   ]
+
+  count = "${local.alb_count}"
+}
+
+resource "aws_ecs_service" "0_no_alb" {
+  name            = "${local.ecs_name_service}"
+  cluster         = "${aws_ecs_cluster.0.id}"
+  task_definition = "${aws_ecs_task_definition.0.arn}"
+  launch_type     = "FARGATE"
+
+  desired_count                      = "${var.desired_count}"
+  deployment_minimum_healthy_percent = "${var.deployment_minimum_healthy_percent}"
+
+  network_configuration {
+    security_groups  = ["${aws_security_group.alb_ecs.id}"]
+    subnets          = ["${var.subnets}"]
+    assign_public_ip = true
+  }
+
+  count = "${local.alb_count == 1 ? 0 : 1}"
 }

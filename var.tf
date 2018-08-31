@@ -25,12 +25,12 @@ variable "subnets" {
 
 variable "ecs_cpu" {
   description = "Amount of CPU for the container"
-  default     = "1024"
+  default     = "256"
 }
 
 variable "ecs_memory" {
   description = "Amount of Memory for the container"
-  default     = "2048"
+  default     = "512"
 }
 
 variable "ecs_role_arn" {

@@ -57,9 +57,5 @@ resource "aws_ecs_service" "0_no_alb" {
     assign_public_ip = true
   }
 
-  depends_on = [
-    "aws_ecs_task_definition.0",
-  ]
-
   count = "${local.alb_count == 1 ? 0 : 1}"
 }

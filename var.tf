@@ -49,6 +49,7 @@ variable "vpc_id" {
 
 variable "container_port" {
   description = "ECS port on the container"
+  default     = ""
 }
 
 variable "create_log_group" {

@@ -11,5 +11,5 @@ output "ecs_name_task_definition" {
 }
 
 output "alb_dns" {
-  value = "${aws_alb.0.dns_name}"
+  value = "${aws_alb.0.*.dns_name}"
 }

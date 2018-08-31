@@ -52,7 +52,7 @@ resource "aws_ecs_service" "0_no_alb" {
   deployment_minimum_healthy_percent = "${var.deployment_minimum_healthy_percent}"
 
   network_configuration {
-    security_groups  = ["${aws_security_group.alb_ecs.id}"]
+    security_groups  = ["${var.security_groups}"]
     subnets          = ["${var.subnets}"]
     assign_public_ip = true
   }

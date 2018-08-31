@@ -75,3 +75,8 @@ variable "env_vals" {
   description = "Vals for env vars"
   default     = []
 }
+
+variable "health_check_path" {
+  description = ""
+  default     = "/"
+}

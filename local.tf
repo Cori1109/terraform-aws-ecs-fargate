@@ -26,4 +26,6 @@ locals {
   env_vars      = "${local.env_length > 0 ? join(",", local.env_vars_list) : "{\"name\":\"TF_AUTHOR\",\"value\":\"rms1000watt\"}" }" //"
 
   alb_count = "${var.include_alb ? 1 : 0}"
+
+  out_alb_dns = "${aws_alb.0.*.dns_name}"
 }

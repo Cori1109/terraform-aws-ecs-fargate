@@ -27,5 +27,5 @@ locals {
 
   alb_count = "${var.include_alb ? 1 : 0}"
 
-  out_alb_dns = "${aws_alb.0.*.dns_name}"
+  out_alb_dns = "${coalescelist(aws_alb.0.*.dns_name, list("nil"))}"
 }
